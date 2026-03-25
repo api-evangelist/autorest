@@ -1,12 +1,17 @@
 aid: autorest
 name: AutoRest
 description: >-
-  AutoRest is an open source tool from Microsoft that generates client libraries for accessing RESTful APIs from OpenAPI specifications.
+  AutoRest is an open source tool from Microsoft that generates client libraries
+  for accessing RESTful APIs from OpenAPI specifications. It powers the
+  generation of Azure SDKs across Python, Java, C#, TypeScript, Go, and other
+  languages with extensible plugins and customization support.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - SDKs
   - Code Generation
+  - OpenAPI
+  - Microsoft
 url: >-
   https://raw.githubusercontent.com/api-evangelist/autorest/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -16,14 +21,21 @@ apis:
   - aid: autorest:autorest
     name: AutoRest
     description: >-
-      AutoRest is an open source tool from Microsoft that generates client libraries for accessing RESTful APIs from OpenAPI specifications.
+      AutoRest generates client libraries for accessing RESTful APIs from
+      OpenAPI specifications, powering Azure SDK generation across multiple
+      languages with extensible plugin architecture.
     humanURL: https://github.com/Azure/autorest
     tags:
       - SDKs
       - Code Generation
+      - OpenAPI
     properties:
       - type: Documentation
         url: https://github.com/Azure/autorest/blob/main/docs/readme.md
+      - type: Getting Started
+        url: https://github.com/Azure/autorest/blob/main/docs/install/readme.md
+      - type: GitHub Repository
+        url: https://github.com/Azure/autorest
 common:
   - type: Website
     url: https://github.com/Azure/autorest
@@ -31,6 +43,8 @@ common:
     url: https://github.com/Azure/autorest/blob/main/docs/readme.md
   - type: GitHub Organization
     url: https://github.com/Azure
+  - type: Extensions
+    url: https://github.com/Azure/autorest/blob/main/docs/extensions/readme.md
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
