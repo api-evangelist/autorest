@@ -44,7 +44,7 @@ apis:
         url: https://github.com/Azure/autorest/blob/main/docs/install/readme.md
       - type: GitHubRepository
         url: https://github.com/Azure/autorest
-      - type: SDK
+      - type: SDKs
         url: https://www.npmjs.com/package/@autorest/core
         title: npm Package
 
