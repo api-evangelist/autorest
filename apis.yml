@@ -32,7 +32,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/autorest/refs/heads/main/apis.yml
 created: '2026-03-25'
-modified: '2026-04-19'
+modified: '2026-08-06'
 specificationVersion: '0.19'
 apis:
   - aid: autorest:autorest-core
@@ -162,6 +162,42 @@ common:
     url: https://github.com/Azure/autorest/blob/main/docs/install/readme.md
   - type: ReleaseNotes
     url: https://github.com/Azure/autorest/releases
+  - type: APIReference
+    url: https://github.com/Azure/autorest/blob/main/docs/generate/flags.md
+    title: Index of AutoRest Flags
+  - type: Support
+    url: https://github.com/Azure/autorest/issues
+  - type: Community
+    url: https://github.com/Azure/autorest/discussions
+  - type: License
+    url: https://github.com/Azure/autorest/blob/main/LICENSE
+    title: MIT License
+  - type: Packages
+    url: packages/autorest-packages.yml
+  - type: SDKs
+    url: packages/autorest-packages.yml
+    title: First-party npm packages and language generators
+  - type: CLI
+    url: cli/autorest-cli.yml
+  - type: Lifecycle
+    url: lifecycle/autorest-lifecycle.yml
+  - type: Deprecation
+    url: https://github.com/Azure/autorest/issues/5175
+    title: AutoRest deprecation and retirement (2026-07-01)
+  - type: ChangeLog
+    url: changelog/autorest-changelog.yml
+  - type: VulnerabilityDisclosure
+    url: security/autorest-vulnerability-disclosure.yml
+  - type: Security
+    url: https://github.com/Azure/autorest/blob/main/SECURITY.md
+    title: Microsoft Security Response Center disclosure policy
+  - type: Vocabulary
+    url: vocabulary/autorest-openapi-extensions.yml
+    title: AutoRest x-ms-* extensions for OpenAPI 2.0
+  - type: Conformance
+    url: conformance/autorest-conformance.yml
+  - type: LLMsTxt
+    url: llms/autorest-llms.txt
   - type: Features
     data:
       - name: Multi-Language Code Generation
@@ -220,3 +256,17 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-06'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
+x-surface:
+  kind: developer-tool
+  note: >-
+    AutoRest is a locally installed code generator, not a hosted API. It has no
+    baseURL, no authentication surface, no rate limits and no status page, and
+    no /.well-known/ or A2A surface of its own — the project is served entirely
+    from github.com. Artifacts here describe the tool's distribution, command
+    surface, extension vocabulary and lifecycle. Absence of runtime API
+    artifacts is a property of what AutoRest is, not a gap in coverage.
