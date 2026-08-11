@@ -150,6 +150,10 @@ apis:
         url: https://github.com/Azure/autorest.go
 
 common:
+  - type: CodeOfConduct
+    url: https://github.com/Azure/.github/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/Azure/autorest/blob/main/CONTRIBUTING.md
   - type: Website
     url: https://github.com/Azure/autorest
   - type: Documentation
