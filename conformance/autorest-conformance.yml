@@ -1,0 +1,112 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/Azure/autorest/blob/main/docs
+summary: >-
+  AutoRest has no API of its own, so this file records the standards AutoRest
+  CONSUMES and EMITS as a code generator — which specification versions it reads,
+  what it converts between, and which security models it can wire into generated
+  clients. It is not a claim about a runtime API surface.
+standards:
+  - id: openapi-2.0
+    name: OpenAPI 2.0 (Swagger)
+    role: input
+    conforms: true
+    evidence: >-
+      Primary input format; the extensions vocabulary is explicitly titled
+      "AutoRest Extensions for OpenAPI 2.0".
+    source: https://github.com/Azure/autorest/blob/main/docs/extensions/readme.md
+  - id: openapi-3.0
+    name: OpenAPI 3.0
+    role: input
+    conforms: true
+    evidence: >-
+      @azure-tools/oai2-to-oai3 converts 2.0 input to 3.0 with source maps;
+      --output-converted-oai3 emits the converted document.
+    source: https://www.npmjs.com/package/@azure-tools/oai2-to-oai3
+  - id: openapi-3.1
+    name: OpenAPI 3.1
+    role: input
+    conforms: false
+    evidence: >-
+      Not documented as supported. AutoRest was deprecated before 3.1 support
+      landed; TypeSpec is the successor path.
+  - id: json-schema
+    name: JSON Schema
+    role: input
+    conforms: true
+    evidence: >-
+      Schema handling library published as @azure-tools/jsonschema; the
+      modelerfour plugin normalizes OpenAPI/JSON Schema into the shared code
+      model.
+  - id: jsonpath
+    name: JSONPath
+    role: internal
+    conforms: true
+    evidence: >-
+      AutoRest directives target document nodes by JSONPath (docs/generate/directives.md).
+  - id: oauth2
+    name: OAuth 2.0
+    role: emitted
+    conforms: true
+    evidence: >-
+      schemas/aad-token-security.json declares an OAuth 2.0 authorizationCode
+      flow against login.microsoftonline.com; --add-credential /
+      --credential-scopes wire token credentials into generated clients.
+    source: https://github.com/Azure/autorest/blob/main/schemas/aad-token-security.json
+  - id: oidc
+    name: OpenID Connect
+    role: emitted
+    conforms: false
+    evidence: No OIDC discovery handling documented.
+  - id: azure-arm
+    name: Azure Resource Manager API contract
+    role: emitted
+    conforms: true
+    evidence: >-
+      --azure-arm mode plus the x-ms-azure-resource /
+      x-ms-long-running-operation extension family implement the ARM resource
+      and long-running-operation patterns.
+  - id: odata
+    name: OData
+    role: passthrough
+    conforms: partial
+    evidence: x-ms-odata marks operations carrying OData query parameters.
+  - id: typespec
+    name: TypeSpec
+    role: output
+    conforms: true
+    evidence: >-
+      @autorest/openapi-to-typespec scaffolds a TypeSpec definition from an
+      OpenAPI document — the documented migration path off deprecated AutoRest.
+    source: https://www.npmjs.com/package/@autorest/openapi-to-typespec
+  - id: semver
+    name: Semantic Versioning
+    role: distribution
+    conforms: true
+    evidence: All @autorest/* and @azure-tools/* packages are semver on npm.
+  - id: rfc9457
+    name: RFC 9457 Problem Details
+    role: n/a
+    conforms: false
+    evidence: Not applicable — AutoRest serves no HTTP responses.
+compliance_program:
+  published: false
+  note: >-
+    No AutoRest-specific certification or compliance program is published. The
+    repository inherits Microsoft's open-source security policy (see
+    security/autorest-vulnerability-disclosure.yml) but that is a disclosure
+    policy, not a compliance attestation, so no Compliance pointer is emitted.
+license:
+  spdx: MIT
+  url: https://github.com/Azure/autorest/blob/main/LICENSE
+x-evidence:
+  fetched: '2026-08-06'
+  sources:
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/extensions/readme.md
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/schemas/aad-token-security.json
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/generate/flags.md
+      http_status: 200
+    - url: https://registry.npmjs.org/@autorest%2Fopenapi-to-typespec
+      http_status: 200

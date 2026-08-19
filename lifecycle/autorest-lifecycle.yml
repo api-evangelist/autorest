@@ -1,0 +1,102 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/Azure/autorest/blob/main/readme.md
+summary: >-
+  AutoRest is an end-of-life developer tool, not a hosted service. There is no
+  API to version, no SLA and no status page — the lifecycle surface here is the
+  package/release train, the v2-to-v3 migration path, and the formal deprecation
+  and retirement of the whole project in favor of TypeSpec.
+versioning:
+  scheme: semver
+  distribution: npm
+  components:
+    - name: CLI
+      package: autorest
+      current: 3.8.0
+      note: Thin bootstrap; changes rarely.
+    - name: Core module
+      package: "@autorest/core"
+      current: 3.10.9
+      note: >-
+        Selected at runtime with `--version:`; v3 defaults to the ~3.0.6000
+        range, v2 generators default to core 2.0.4413. Multiple core versions
+        install side-by-side under $HOME/.autorest.
+    - name: Modeler
+      package: "@autorest/modelerfour"
+      current: 4.27.3
+  pinning:
+    cli_flag: "--version:<semver|build|folder|url>"
+    extension_flag: "--use=<packagename>[@<version>]"
+    config_key: "version:"
+  docs: https://github.com/Azure/autorest/blob/main/docs/install/autorest-versioning.md
+deprecation:
+  status: deprecated
+  announced_in: https://github.com/Azure/autorest/blob/main/readme.md
+  policy_url: https://github.com/Azure/autorest/issues/5175
+  tracking_issue: 5175
+  retirement_date: '2026-07-01'
+  statement: >-
+    "AutoRest is deprecated and will be retired on July 1, 2026. AutoRest is no
+    longer under active development. No new features, language generators, or
+    plugins will be added."
+  successor:
+    name: TypeSpec
+    url: https://typespec.io/
+    rationale: >-
+      Microsoft's actively developed API description language and code
+      generation platform, named in the AutoRest readme as the recommended
+      replacement.
+    migration_tool: "@autorest/openapi-to-typespec"
+    migration_flag: "--openapi-to-typespec"
+  sunset_header: false
+  note: >-
+    RFC 8594 Sunset/Deprecation headers are not applicable — AutoRest serves no
+    HTTP surface. The deprecation is announced in the repository readme and
+    tracked in a public GitHub issue.
+internal_migration:
+  from: AutoRest 2.0
+  to: AutoRest 3.0
+  docs: https://github.com/Azure/autorest/blob/main/docs/migrate/readme.md
+  fallback: "npm install -g autorest@previous (documented as not recommended)"
+releases:
+  changelog_source: chronus (generated per package CHANGELOG.md)
+  release_notes: https://github.com/Azure/autorest/blob/main/docs/releases/readme.md
+  github_releases: https://github.com/Azure/autorest/releases
+  latest_core_release: '2026-04-09'
+sla:
+  published: false
+  note: Open source MIT project; no service-level agreement is published.
+status_page:
+  published: false
+  note: >-
+    No status page exists and none is applicable — AutoRest is a locally
+    installed CLI with no operated runtime. Recorded as absent rather than
+    omitted so the gap is not read as an unchecked field.
+support:
+  issues: https://github.com/Azure/autorest/issues
+  discussions: https://github.com/Azure/autorest/discussions
+  open_issues: 47
+  note: >-
+    With the project deprecated, issue triage is limited; the deprecation notice
+    directs new work to TypeSpec.
+repository:
+  url: https://github.com/Azure/autorest
+  license: MIT
+  archived: false
+  created: '2015-02-20'
+  last_push: '2026-08-06'
+  stars: 4798
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-06'
+  sources:
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/readme.md
+      http_status: 200
+    - url: https://github.com/Azure/autorest/issues/5175
+      http_status: 200
+    - url: https://api.github.com/repos/Azure/autorest
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/install/autorest-versioning.md
+      http_status: 200
+    - url: https://typespec.io/
+      http_status: 200

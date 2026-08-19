@@ -1,0 +1,272 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/Azure/autorest/blob/main/readme.md
+note: >-
+  AutoRest is a code-generation TOOL, not a hosted API. Its "packages" are the
+  first-party npm distributions of the CLI, the core engine, the language
+  generator plugins, and the shared libraries — all published by Microsoft under
+  the @autorest and @azure-tools npm scopes. Versions and licenses below were
+  read live from the npm registry on 2026-08-06. AutoRest is deprecated with a
+  retirement date of 2026-07-01; see lifecycle/autorest-lifecycle.yml.
+registries_probed:
+  - registry: npm
+    result: hit
+    url: https://registry.npmjs.org/
+  - registry: pypi
+    result: miss
+    note: >-
+      pypi.org/project/autorest/ exists (200) but is an unrelated third-party
+      project (grycap/autorest, "a tool to create simple REST API for legacy
+      applications") — NOT Microsoft AutoRest. Deliberately excluded.
+  - registry: nuget
+    result: partial
+    note: >-
+      Legacy AutoRest v2 .NET components remain published by the azure-sdk /
+      Microsoft owners (Microsoft.AutoRest.Common). No current v3 NuGet package.
+  - registry: mcr
+    result: hit
+    note: Docker images published to azsdkengsys.azurecr.io/azuresdk/*
+packages:
+  # --- CLI + core ---
+  - language: javascript
+    registry: npm
+    name: autorest
+    version: 3.8.0
+    url: https://www.npmjs.com/package/autorest
+    install: npm install -g autorest
+    license: MIT
+    official: true
+    role: cli
+    description: >-
+      The AutoRest command-line tool. Bootstraps and pins the core module; the
+      published entry point for all AutoRest use.
+  - language: javascript
+    registry: npm
+    name: "@autorest/core"
+    version: 3.10.9
+    url: https://www.npmjs.com/package/@autorest/core
+    install: npm install @autorest/core
+    license: MIT
+    official: true
+    role: core
+    description: >-
+      AutoRest Core Module — loads OpenAPI/Swagger inputs, resolves
+      configuration, and runs the plugin pipeline.
+  - language: javascript
+    registry: npm
+    name: "@autorest/modelerfour"
+    version: 4.27.3
+    url: https://www.npmjs.com/package/@autorest/modelerfour
+    install: npm install @autorest/modelerfour
+    license: MIT
+    official: true
+    role: modeler
+    description: >-
+      Modeler Version Four — normalizes OpenAPI schemas into the shared code
+      model consumed by every language generator.
+
+  # --- language generators ---
+  - language: csharp
+    registry: npm
+    name: "@autorest/csharp"
+    version: 3.0.0-beta.20251203.1
+    url: https://www.npmjs.com/package/@autorest/csharp
+    install: autorest --csharp
+    official: true
+    role: generator
+    source_code: https://github.com/Azure/autorest.csharp
+  - language: python
+    registry: npm
+    name: "@autorest/python"
+    version: 6.50.3
+    url: https://www.npmjs.com/package/@autorest/python
+    install: autorest --python
+    license: MIT
+    official: true
+    role: generator
+    source_code: https://github.com/Azure/autorest.python
+  - language: java
+    registry: npm
+    name: "@autorest/java"
+    version: 4.1.63
+    url: https://www.npmjs.com/package/@autorest/java
+    install: autorest --java
+    license: MIT
+    official: true
+    role: generator
+    source_code: https://github.com/Azure/autorest.java
+  - language: typescript
+    registry: npm
+    name: "@autorest/typescript"
+    version: 6.0.74
+    url: https://www.npmjs.com/package/@autorest/typescript
+    install: autorest --typescript
+    official: true
+    role: generator
+    source_code: https://github.com/Azure/autorest.typescript
+  - language: go
+    registry: npm
+    name: "@autorest/go"
+    version: 4.0.0-preview.80
+    url: https://www.npmjs.com/package/@autorest/go
+    install: autorest --go
+    license: MIT
+    official: true
+    role: generator
+    source_code: https://github.com/Azure/autorest.go
+  - language: powershell
+    registry: npm
+    name: "@autorest/powershell"
+    version: 4.0.754
+    url: https://www.npmjs.com/package/@autorest/powershell
+    install: autorest --powershell
+    license: MIT
+    official: true
+    role: generator
+    source_code: https://github.com/Azure/autorest.powershell
+
+  # --- migration tooling ---
+  - language: javascript
+    registry: npm
+    name: "@autorest/openapi-to-typespec"
+    version: 0.11.14
+    url: https://www.npmjs.com/package/@autorest/openapi-to-typespec
+    install: autorest --openapi-to-typespec
+    license: MIT
+    official: true
+    role: migration
+    description: >-
+      Scaffolds a TypeSpec definition from an OpenAPI document — the migration
+      path off deprecated AutoRest onto TypeSpec.
+
+  # --- shared libraries (plugin authors) ---
+  - language: javascript
+    registry: npm
+    name: "@autorest/extension-base"
+    version: 3.6.1
+    url: https://www.npmjs.com/package/@autorest/extension-base
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@autorest/codemodel"
+    version: 4.20.1
+    url: https://www.npmjs.com/package/@autorest/codemodel
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@autorest/configuration"
+    version: 1.12.3
+    url: https://www.npmjs.com/package/@autorest/configuration
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@autorest/common"
+    version: 1.6.1
+    url: https://www.npmjs.com/package/@autorest/common
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@azure-tools/oai2-to-oai3"
+    version: 4.8.1
+    url: https://www.npmjs.com/package/@azure-tools/oai2-to-oai3
+    license: MIT
+    official: true
+    role: library
+    description: OpenAPI 2.0 to OpenAPI 3.0 conversion with source maps.
+  - language: javascript
+    registry: npm
+    name: "@azure-tools/openapi"
+    version: 3.6.1
+    url: https://www.npmjs.com/package/@azure-tools/openapi
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@azure-tools/datastore"
+    version: 4.8.3
+    url: https://www.npmjs.com/package/@azure-tools/datastore
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@azure-tools/deduplication"
+    version: 3.2.5
+    url: https://www.npmjs.com/package/@azure-tools/deduplication
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@azure-tools/codegen"
+    version: 2.10.1
+    url: https://www.npmjs.com/package/@azure-tools/codegen
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@azure-tools/extension"
+    version: 3.7.2
+    url: https://www.npmjs.com/package/@azure-tools/extension
+    license: MIT
+    official: true
+    role: library
+  - language: javascript
+    registry: npm
+    name: "@azure-tools/jsonschema"
+    version: 1.3.1
+    url: https://www.npmjs.com/package/@azure-tools/jsonschema
+    license: MIT
+    official: true
+    role: library
+
+  # --- legacy .NET (AutoRest v2) ---
+  - language: csharp
+    registry: nuget
+    name: Microsoft.AutoRest.Common
+    version: 2.4.48
+    url: https://www.nuget.org/packages/Microsoft.AutoRest.Common
+    official: true
+    role: legacy
+    owners: [azure-sdk, Microsoft]
+    description: >-
+      Common code shared between the AutoRest v2 modeler and code generators.
+      Legacy — superseded by the npm @autorest/* v3 line.
+
+containers:
+  - image: azsdkengsys.azurecr.io/azuresdk/autorest
+    description: Base image with Node installed
+  - image: azsdkengsys.azurecr.io/azuresdk/autorest-python
+    description: Base image + Python 3, for building the Python SDK
+  - image: azsdkengsys.azurecr.io/azuresdk/autorest-dotnet
+    description: Base image + .NET, for building the C# SDK
+  - image: azsdkengsys.azurecr.io/azuresdk/autorest-java
+    description: Base image + Java, for building the Java SDK
+  - image: azsdkengsys.azurecr.io/azuresdk/autorest-all
+    description: Base image with every language toolchain
+containers_docs: https://github.com/Azure/autorest/blob/main/docs/docker.md
+
+x-evidence:
+  fetched: '2026-08-06'
+  sources:
+    - url: https://registry.npmjs.org/autorest
+      http_status: 200
+    - url: https://registry.npmjs.org/@autorest%2Fcore
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/readme.md
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/docker.md
+      http_status: 200
+    - url: https://pypi.org/pypi/autorest/json
+      http_status: 200
+      verdict: not-first-party

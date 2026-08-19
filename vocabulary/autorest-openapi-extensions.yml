@@ -1,0 +1,131 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/Azure/autorest/blob/main/docs/extensions/readme.md
+name: AutoRest Extensions for OpenAPI 2.0
+summary: >-
+  AutoRest defines and consumes a published vendor-extension vocabulary for
+  OpenAPI 2.0 (Swagger). These `x-ms-*` keywords are the single most widely
+  deployed OpenAPI extension vocabulary in the industry — every document in
+  Azure/azure-rest-api-specs is annotated with them — and they are what AutoRest
+  reads to shape generated clients. Code-generation impact varies by language;
+  some extensions apply only to Azure Resource Manager APIs, and some are
+  metadata only and trigger no generator change.
+applies_to: OpenAPI 2.0 (Swagger)
+docs: https://github.com/Azure/autorest/blob/main/docs/extensions/readme.md
+examples: https://github.com/Azure/autorest/tree/main/docs/extensions/swagger-extensions-examples
+groups:
+  - group: Generic extensions
+    terms:
+      - term: x-ms-code-generation-settings
+        parent: Info Object
+        description: Passes code generation settings via the OpenAPI definition.
+        status: deprecated
+        note: Deprecated — use configuration files instead.
+      - term: x-ms-skip-url-encoding
+        parent: Parameter Object
+        description: >-
+          Skips automatic URL encoding for path and query parameters whose
+          source value is already known to be URL-encoded.
+      - term: x-ms-enum
+        description: Additional metadata for enums (name, modelAsString, values).
+      - term: x-ms-parameter-grouping
+        description: Groups method parameters into a parameter object in generated clients.
+      - term: x-ms-parameter-location
+        description: >-
+          Declares that a global parameter is an operation parameter rather than
+          a client property.
+      - term: x-ms-paths
+        description: >-
+          Alternative to the Paths Object allowing Path Item Objects to carry
+          query parameters, for non-pure-REST APIs.
+      - term: x-ms-client-name
+        description: >-
+          Controls the identifier name used in client-side code for parameters
+          and schema properties.
+      - term: x-ms-external
+        parent: Definitions Object
+        description: Excludes specific definitions from code generation.
+      - term: x-ms-discriminator-value
+        description: Maps the on-the-wire discriminator value to the definition name.
+      - term: x-ms-client-flatten
+        description: Flattens a client model property or parameter.
+      - term: x-ms-parameterized-host
+        description: >-
+          Replaces the fixed host with a host template whose variables are
+          supplied as parameters.
+      - term: x-ms-mutability
+        description: >-
+          Tells AutoRest how to generate code (create/read/update accessors)
+          without altering the wire model.
+      - term: x-ms-examples
+        description: >-
+          Format for specifying request and response examples for an operation.
+      - term: x-ms-error-response
+        description: Indicates a response status code should be treated as an error response.
+      - term: x-ms-text
+        description: XML helper for nodes carrying both attributes and text.
+      - term: x-ms-client-default
+        description: Sets a default value for properties and parameters.
+      - term: x-ms-pageable
+        description: Declares paging through lists of data (nextLink / itemName).
+      - term: x-ms-long-running-operation
+        description: >-
+          Marks an operation as implementing the Azure Resource Manager
+          long-running-operation pattern.
+      - term: x-nullable
+        description: When true, null is a valid value for the associated schema.
+      - term: x-ms-header-collection-prefix
+        description: >-
+          Handles collections of arbitrary headers by distinguishing them with a
+          specified prefix.
+      - term: x-ms-internal
+        description: Keeps specific operations out of the generated public client surface.
+  - group: Microsoft Azure extensions
+    note: >-
+      Available in most generators only when using --azure-arm.
+    terms:
+      - term: x-ms-odata
+        description: Indicates the operation includes one or more OData query parameters.
+      - term: x-ms-azure-resource
+        description: >-
+          Marks a Schema Object as an Azure Resource Manager resource.
+      - term: x-ms-request-id
+        description: Overwrites the request id header name.
+      - term: x-ms-client-request-id
+        description: Overwrites the client request id header name.
+      - term: x-ms-arm-id-details
+        description: >-
+          Declares which resources may be referred to by an `arm-id` formatted
+          string field.
+  - group: Metadata extensions
+    note: >-
+      Additional description of the REST API; these currently trigger no code
+      generation change.
+    terms:
+      - term: x-ms-secret
+        description: Annotates a secret property.
+      - term: x-ms-identifiers
+        status: in-progress
+        description: Indicates the identifying properties of objects in an array.
+      - term: x-ms-azure-rbac-permissions-required
+        status: in-progress
+        description: >-
+          Specifies permission exceptions for autogenerated public Azure REST
+          API reference documentation.
+term_count: 29
+related:
+  - name: AutoRest prechecker
+    url: https://github.com/Azure/autorest/blob/main/docs/openapi/prechecker.md
+    description: Validation pass run over OpenAPI input before modeling.
+  - name: Built-in directives
+    url: https://github.com/Azure/autorest/blob/main/docs/generate/built-in-directives.md
+  - name: Directives
+    url: https://github.com/Azure/autorest/blob/main/docs/generate/directives.md
+    description: >-
+      JSONPath-targeted transformations applied to the input document — the
+      AutoRest analogue of an OpenAPI Overlay.
+x-evidence:
+  fetched: '2026-08-06'
+  sources:
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/extensions/readme.md
+      http_status: 200

@@ -1,0 +1,117 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/Azure/autorest/blob/main/docs/user/command-line-interface.md
+name: autorest
+summary: >-
+  AutoRest ships as a CLI, not as a hosted API. `autorest` is a thin bootstrap
+  that acquires and runs a pinned version of the @autorest/core engine, loads
+  language generator extensions, and drives code generation from an OpenAPI 2.0
+  or 3.0 document. Nearly all behavior is configured through a literate
+  configuration file (readme.md by default) with command-line overrides.
+docs:
+  overview: https://github.com/Azure/autorest/blob/main/docs/user/command-line-interface.md
+  install: https://github.com/Azure/autorest/blob/main/docs/install/readme.md
+  configuration: https://github.com/Azure/autorest/blob/main/docs/user/configuration.md
+  flags_reference: https://github.com/Azure/autorest/blob/main/docs/generate/flags.md
+  versioning: https://github.com/Azure/autorest/blob/main/docs/install/autorest-versioning.md
+  directives: https://github.com/Azure/autorest/blob/main/docs/generate/directives.md
+  troubleshooting: https://github.com/Azure/autorest/blob/main/docs/troubleshooting.md
+install:
+  - method: npm
+    command: npm install -g autorest
+    note: Requires Node.js (12.19.x LTS or newer per the install docs).
+  - method: docker
+    command: docker run -v "${pwd}:/specs" -t azsdkengsys.azurecr.io/azuresdk/autorest --input-file=/specs/openapi.json
+    note: Language-specific images available; see packages/autorest-packages.yml.
+  - method: npm-legacy
+    command: npm install -g autorest@previous
+    note: Reverts to AutoRest V2. Documented as "not recommended".
+usage: "autorest [config-file.md | config-file.json | config-file.yaml] [additional options]"
+configuration:
+  default_file: readme.md
+  formats: [markdown-literate, json, yaml]
+  override_syntax: "--flag=value"
+  precedence: >-
+    Command-line flags override values set in the configuration file. The
+    configuration file is the documented preferred surface.
+architecture:
+  - component: CLI
+    package: autorest
+    role: Bootstraps the core module; holds no generation logic itself.
+  - component: Core module
+    package: "@autorest/core"
+    role: >-
+      Loads Swagger/OpenAPI files, resolves configuration, connects extensions,
+      and runs the pipeline. Installed side-by-side under $HOME/.autorest.
+  - component: Extensions
+    package: "@autorest/<language>"
+    role: Language generators and modelers that plug into the pipeline.
+version_management:
+  install_location: $HOME/.autorest
+  select_core: "--version:<semver|build|folder|url>"
+  default_v3_range: "~3.0.6000"
+  default_v2_core: 2.0.4413
+  select_extension: "--use=<packagename>[@<version>]"
+  well_known_extension_shorthand: "--csharp, --python, --java, --typescript, --go, --powershell, --swift"
+  commands:
+    - flag: --list-installed
+      description: Show all installed versions of AutoRest tools
+    - flag: --list-available=nn
+      description: List the last nn releases available from GitHub (defaults to 10)
+    - flag: --version=VERSION
+      description: Use (installing if necessary) a specific core version
+    - flag: --latest
+      description: Update to the latest core module
+    - flag: --reset
+      description: Remove all installed versions and install the latest
+    - flag: --help
+      description: Print help and report the resolved core version
+flag_groups:
+  # Grouped exactly as the published flags index groups them.
+  - group: Output verbosity
+    flags: [--verbose, --debug, --quiet]
+  - group: Version management
+    flags: [--list-installed, "--list-available=nn", "--version=version", --reset, --use]
+  - group: AutoRest core
+    flags: [--output-converted-oai3, --apply-transforms-in-place, --memory, --azure-validator, "--openapi-type=arm|default|data-plane", --skip-semantics-validation]
+  - group: Shared (all generators)
+    flags: ["--input-file=FILENAME", "--output-folder=DIRECTORY", --clear-output-folder, "--project-folder=DIRECTORY", --add-credential, "--credential-scopes=VALUE(S)", "--license-header=LICENSE_HEADER", "--namespace=NAMESPACE", "--tag=VALUE", --azure-arm, --head-as-boolean, "--title=NAME", "--override-client-name=NAME", "--description=DESCRIPTION", --client-side-validation, "--package-name=NAME", "--package-version=VERSION", --trace, --eol]
+  - group: Python
+    flags: ["--python-sdks-folder=DIRECTORY", --black, --basic-setup-py, --multiapi, "--default-api=VALUE", --keep-version-file, --no-namespace-folders, --python3-only, --version-tolerant, --low-level-client, "--models-mode=msrest|none"]
+  - group: .NET
+    flags: [--public-clients, --model-namespace, "--shared-source-folders=VALUE(S)", "--library-name=NAME"]
+  - group: Java
+    flags: ["--java-sdks-folder=DIRECTORY", "--fluent=LITE|PREMIUM", --data-plane, --regenerate-pom, --generate-client-as-impl, --generate-client-interfaces, --generate-sync-async-clients, "--sync-methods=all|essential|none", --client-logger, --non-null-annotations, "--artifact-id=NAME", --polling]
+  - group: TypeScript
+    flags: [--generate-metadata, "--tracing-spanprefix=SPAN_PREFIX", --disable-async-iterators]
+  - group: Go
+    flags: ["--module=NAME", "--file-prefix=PREFIX", "--openapi-type=arm|data-plane", "--generate-as-internal=NAME=ALIAS"]
+  - group: Debugging
+    flags: [--verbose, --debug, "--{language-generator}-debugger", --save-inputs]
+  - group: Deprecated / not recommended
+    flags: ["--payload-flattening-threshold=NUMBER", --add-credentials]
+flag_count: 106
+authentication:
+  purpose: Reading OpenAPI inputs from private GitHub repositories (input auth, not API auth).
+  methods:
+    - name: token query parameter
+      description: Append ?token=<token> to a raw GitHub URL; AutoRest reuses it for referenced documents.
+    - name: GitHub OAuth / personal access token
+      description: "--github-auth-token=<token> or the GITHUB_AUTH_TOKEN environment variable; requires repo scope."
+  docs: https://github.com/Azure/autorest/blob/main/docs/user/command-line-interface.md#authentication
+status: deprecated
+deprecation_note: >-
+  AutoRest is deprecated and retires 2026-07-01. New work should use TypeSpec;
+  `--openapi-to-typespec` scaffolds the migration. See
+  lifecycle/autorest-lifecycle.yml.
+x-evidence:
+  fetched: '2026-08-06'
+  sources:
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/user/command-line-interface.md
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/generate/flags.md
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/install/readme.md
+      http_status: 200
+    - url: https://raw.githubusercontent.com/Azure/autorest/main/docs/install/autorest-versioning.md
+      http_status: 200
