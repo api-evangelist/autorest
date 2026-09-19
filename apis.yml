@@ -60,6 +60,11 @@ apis:
       - Code Generation
       - OpenAPI
       - Plugin System
+      - Pipelines
+    tags_raw:
+      - Code Generation
+      - OpenAPI
+      - Plugin System
       - Pipeline
     properties:
       - type: Documentation
