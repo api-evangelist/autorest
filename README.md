@@ -1,4 +1,4 @@
-# AutoRest (autorest)
+# AutoRest
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,152 +64,112 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-AutoRest is an open source tool from Microsoft (MIT License) that generates client libraries for accessing RESTful APIs from OpenAPI specifications. It powers generation of Azure SDKs across C#, Python, Java, TypeScript, Go, PowerShell, and Swift with an extensible plugin architecture. Note: AutoRest is deprecated as of 2026 with retirement on July 1, 2026 — the recommended successor is TypeSpec.
+AutoRest is an open source tool from Microsoft (MIT License) that generates client libraries for accessing RESTful APIs from OpenAPI specifications. It powers generation of Azure SDKs across C#, Python, Java, TypeScript, Go, PowerShell, and Swift with an extensible plugin architecture. Note: AutoRest is deprecated as of 2026 with retirement on July 1, 2026. The recommended successor is TypeSpec, a modern API description language and code generation platform from Microsoft.
 
-**URL:** [https://github.com/Azure/autorest](https://github.com/Azure/autorest)
+**Areas:** Code Generation · Microsoft · OpenAPI · SDK Generation · Azure SDK · Deprecated · Developer Tools
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## AutoRest on APIs.io
 
-## Tags
+Everything profiled for AutoRest is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/autorest/](https://apis.io/providers/autorest/)** — or go straight to one of the APIs or properties below.
 
- - Code Generation, Microsoft, OpenAPI, SDK Generation, Azure SDK, Deprecated
+### APIs (6)
 
-## Timestamps
+- [AutoRest Core](https://apis.io/apis/autorest/autorest-core/) — The AutoRest Core package (@autorest/core) is the central engine that orchestrates code generation from OpenAPI specifications. It handles input processing,…
+- [AutoRest C# Generator](https://apis.io/apis/autorest/autorest-csharp/) — The AutoRest C# generator (@autorest/csharp) produces .NET client libraries from OpenAPI specifications. It generates strongly-typed C# code with…
+- [AutoRest Python Generator](https://apis.io/apis/autorest/autorest-python/) — The AutoRest Python generator (@autorest/python) produces Python client libraries from OpenAPI specifications, generating typed Python code compatible with…
+- [AutoRest Java Generator](https://apis.io/apis/autorest/autorest-java/) — The AutoRest Java generator (@autorest/java) produces Java client libraries from OpenAPI specifications, generating Java code compatible with azure-core and…
+- [AutoRest TypeScript Generator](https://apis.io/apis/autorest/autorest-typescript/) — The AutoRest TypeScript generator (@autorest/typescript) produces TypeScript and JavaScript client libraries from OpenAPI specifications, generating…
+- [AutoRest Go Generator](https://apis.io/apis/autorest/autorest-go/) — The AutoRest Go generator (@autorest/go) produces Go client libraries from OpenAPI specifications, generating idiomatic Go code compatible with the Azure…
 
-- **Created:** 2026-03-25
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AutoRest Core
+#### Security (1)
 
-The AutoRest Core package (@autorest/core) is the central engine that orchestrates code generation from OpenAPI specifications. It handles input processing, configuration resolution, pipeline management, and plugin coordination.
+Authentication, trust centre, and vulnerability disclosure.
 
-**Human URL:** [https://github.com/Azure/autorest](https://github.com/Azure/autorest)
+- [Autorest Vulnerability Disclosure](https://apis.io/security/autorest/autorest-vulnerability-disclosure/)
 
-#### Tags
+#### Plans and pricing (1)
 
- - Code Generation, OpenAPI, Plugin System, Pipeline
+Published plans, tiers and prices.
 
-#### Properties
+- [Autorest Plans Pricing](https://apis.io/plans/autorest/autorest-plans-pricing/)
 
-- [Documentation](https://github.com/Azure/autorest/blob/main/docs/readme.md)
-- [Getting Started](https://github.com/Azure/autorest/blob/main/docs/install/readme.md)
-- [GitHub Repository](https://github.com/Azure/autorest)
-- [npm Package](https://www.npmjs.com/package/@autorest/core)
+#### Rate limits (1)
 
-### AutoRest C# Generator
+Published request limits.
 
-The @autorest/csharp generator produces .NET client libraries from OpenAPI specifications with strongly-typed C# code, HttpClient-based REST clients, and async/await patterns compatible with .NET 6+.
+- [Autorest Rate Limits](https://apis.io/rate-limits/autorest/autorest-rate-limits/)
 
-**Human URL:** [https://github.com/Azure/autorest.csharp](https://github.com/Azure/autorest.csharp)
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
- - C#, .NET, Code Generation, Azure SDK
+- [Autorest Finops](https://apis.io/finops/autorest/autorest-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://github.com/Azure/autorest.csharp)
-- [GitHub Repository](https://github.com/Azure/autorest.csharp)
-
-### AutoRest Python Generator
-
-The @autorest/python generator produces Python client libraries from OpenAPI specifications, compatible with the Azure SDK for Python and azure-core library.
-
-**Human URL:** [https://github.com/Azure/autorest.python](https://github.com/Azure/autorest.python)
-
-#### Tags
-
- - Python, Code Generation, Azure SDK
-
-#### Properties
-
-- [Documentation](https://github.com/Azure/autorest.python)
-- [GitHub Repository](https://github.com/Azure/autorest.python)
-
-### AutoRest Java Generator
-
-The @autorest/java generator produces Java client libraries from OpenAPI specifications compatible with azure-core and the Azure SDK for Java ecosystem.
-
-**Human URL:** [https://github.com/Azure/autorest.java](https://github.com/Azure/autorest.java)
-
-#### Tags
-
- - Java, Code Generation, Azure SDK
-
-#### Properties
-
-- [Documentation](https://github.com/Azure/autorest.java)
-- [GitHub Repository](https://github.com/Azure/autorest.java)
-
-### AutoRest TypeScript Generator
-
-The @autorest/typescript generator produces TypeScript and JavaScript client libraries from OpenAPI specifications for Node.js and browser environments.
-
-**Human URL:** [https://github.com/Azure/autorest.typescript](https://github.com/Azure/autorest.typescript)
-
-#### Tags
-
- - TypeScript, JavaScript, Code Generation, Azure SDK
-
-#### Properties
-
-- [Documentation](https://github.com/Azure/autorest.typescript)
-- [GitHub Repository](https://github.com/Azure/autorest.typescript)
-
-### AutoRest Go Generator
-
-The @autorest/go generator produces Go client libraries from OpenAPI specifications, generating idiomatic Go code compatible with the Azure SDK for Go.
-
-**Human URL:** [https://github.com/Azure/autorest.go](https://github.com/Azure/autorest.go)
-
-#### Tags
-
- - Go, Code Generation, Azure SDK
-
-#### Properties
-
-- [Documentation](https://github.com/Azure/autorest.go)
-- [GitHub Repository](https://github.com/Azure/autorest.go)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://github.com/Azure/autorest)
 - [Documentation](https://github.com/Azure/autorest/blob/main/docs/readme.md)
-- [GitHub Organization](https://github.com/Azure)
-- [GitHub Repository](https://github.com/Azure/autorest)
-- [Getting Started](https://github.com/Azure/autorest/blob/main/docs/install/readme.md)
-- [Release Notes](https://github.com/Azure/autorest/releases)
+- [Getting started](https://github.com/Azure/autorest/blob/main/docs/install/readme.md)
+- [API reference](https://github.com/Azure/autorest/blob/main/docs/generate/flags.md)
+- [Support](https://github.com/Azure/autorest/issues)
+- [Security](https://github.com/Azure/autorest/blob/main/SECURITY.md)
+- [GitHub](https://github.com/Azure)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Multi-Language Code Generation | Generate client SDKs from OpenAPI specifications in C#, Python, Java, TypeScript, JavaScript, Go, PowerShell, and Swift using language-specific generator plugins. |
-| Extensible Plugin Architecture | AutoRest uses a pipeline-based plugin architecture where language generators, transformers, and validators are loaded as npm packages. Custom plugins can be developed to extend the generation pipeline. |
-| OpenAPI Processing | Supports OpenAPI 2.0 (Swagger) and OpenAPI 3.0 specification formats. The modelerfour plugin normalizes OpenAPI schemas into a consistent code model shared across all language generators. |
-| Azure SDK Integration | Tightly integrated with Microsoft Azure SDK generation for all Azure services, producing SDK packages published to npm, PyPI, Maven, NuGet, and Go Modules. |
-| Configuration File Support | Supports literate configuration using Markdown code blocks for per-client customization of generated output including namespace, output folder, and generator-specific options. |
+**Kin Score 34.7** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 33.3 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| Azure Service SDK Generation | Primary use case for generating Azure SDK client libraries for all Azure services from the azure-rest-api-specs OpenAPI repository. |
-| REST API Client Generation | Generate strongly-typed client SDKs for any REST API described in OpenAPI format across multiple programming languages simultaneously. |
-| SDK Customization | Use AutoRest configuration files and directives to customize generated code including renames, suppressions, and additional properties. |
+**Agent readiness 0.6** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Azure REST API Specs | AutoRest is the primary tool consuming the Azure/azure-rest-api-specs repository to generate official Azure SDK client libraries. |
-| TypeSpec | TypeSpec is the recommended successor to AutoRest for new API definitions, with AutoRest generators serving as code generation backends. |
-| npm | AutoRest and all language generator plugins are distributed as npm packages under the @autorest scope. |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Maintainers
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/autorest/](https://apis.io/providers/autorest/).
 
-**FN:** Kin Lane
+## How this profile is made
 
-**Email:** kin@apievangelist.com
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AutoRest: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/autorest/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
