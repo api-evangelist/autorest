@@ -11,16 +11,28 @@ artifacts:
   conformance/autorest-conformance.yml:
     method: searched
     evidence: declared in the artifact
+  deprecation/autorest-deprecation-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   finops/autorest-finops.yml:
     method: generated
     evidence: declared in the artifact
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/autorest-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
+  integrations/_index.yml:
+    method: generated
+    evidence: carries an API Evangelist house phrase
+  integrations/autorest-integration-edges.yml:
+    method: unknown
+    evidence: no authorship recorded
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -86,6 +98,9 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/autorest-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
@@ -93,8 +108,8 @@ artifacts:
     method: generated
     evidence: carries an API Evangelist house phrase
   packages/autorest-packages.yml:
-    method: searched
-    evidence: declared in the artifact
+    method: unknown
+    evidence: no authorship recorded
   plans/autorest-plans-pricing.yml:
     method: generated
     evidence: declared in the artifact
@@ -104,6 +119,9 @@ artifacts:
   security/autorest-vulnerability-disclosure.yml:
     method: searched
     evidence: declared in the artifact
+  vendors/autorest-vendors.yml:
+    method: unknown
+    evidence: no authorship recorded
   vocabulary/autorest-openapi-extensions.yml:
     method: searched
     evidence: declared in the artifact
